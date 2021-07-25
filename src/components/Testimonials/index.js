@@ -10,6 +10,7 @@ const Testimonials = () => (
             </h1>
             <div class="flex flex-wrap m-4">
                 {testimonials.map((testimonial) => (
+                    // eslint-disable-next-line react/jsx-key
                     <div class="p-4 md:w-1/2 w-full">
                         <div class="h-full bg-gray-800 bg-opacity-40 p-8 rounded">
                             <TerminalIcon class="block w-8 text-gray-500 mb-4" />

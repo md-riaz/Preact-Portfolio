@@ -8,7 +8,7 @@ const Contact = () => {
     function encode(data) {
         return Object.keys(data)
             .map(
-                (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+                (key) => `${encodeURIComponent(key)  }=${  encodeURIComponent(data[key])}`
             )
             .join("&");
     }
@@ -27,8 +27,7 @@ const Contact = () => {
     return (
         <section id="contact" class="relative">
             <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-                <div
-                    class="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+                <div class="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                     <iframe
                         width="100%"
                         height="100%"
@@ -37,7 +36,7 @@ const Contact = () => {
                         frameBorder={0}
                         marginHeight={0}
                         marginWidth={0}
-                        style={{filter: "opacity(0.7)"}}
+                        style={{ filter: "opacity(0.7)" }}
                         src="https://www.google.com/maps/embed/v1/place?q=97+warren+st+new+york+city&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                     />
                     <div class="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
@@ -46,7 +45,7 @@ const Contact = () => {
                                 ADDRESS
                             </h2>
                             <p class="mt-1">
-                                97 Warren St. <br/>
+                                97 Warren St. <br />
                                 New York, NY 10007
                             </p>
                         </div>
@@ -85,6 +84,7 @@ const Contact = () => {
                             id="name"
                             name="name"
                             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div class="relative mb-4">
@@ -96,6 +96,7 @@ const Contact = () => {
                             id="email"
                             name="email"
                             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div class="relative mb-4">
@@ -108,6 +109,7 @@ const Contact = () => {
                             id="message"
                             name="message"
                             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                            onChange={(e) => setMessage(e.target.value)}
                         />
                     </div>
                     <button
